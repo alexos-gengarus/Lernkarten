@@ -1,0 +1,145 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, sans-serif;
+  --bg: #f6f6f9;
+  --panel: #ffffff;
+  --text: #1b1b1f;
+  --muted: #5a5a68;
+  --primary: #2f6df6;
+  --danger: #d64545;
+  --border: #e0e0e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header,
+footer {
+  padding: 24px 10%;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+}
+
+main {
+  padding: 24px 10% 48px;
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(15, 15, 20, 0.05);
+}
+
+.upload-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: var(--primary);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button#clear-storage {
+  background: var(--danger);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.deck-list {
+  display: grid;
+  gap: 12px;
+}
+
+.deck-item {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.deck-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 220px;
+  background: #fafafc;
+  margin: 16px 0;
+}
+
+.card-face img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-face.hidden {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.progress {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.legend ul {
+  padding-left: 20px;
+}
+
+.study-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  header,
+  footer,
+  main {
+    padding: 20px;
+  }
+}

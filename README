@@ -1,1 +1,23 @@
-Schön das du hier bist
+# Lernkarten Web App
+
+Diese einfache Web-App erlaubt den Import von JSON-Kartensätzen (inkl. HTML und Grafiken in Frage/Antwort)
+und lernt nach einem Repetico-/Leitner-ähnlichen Intervallmodell mit 6 Fächern.
+
+## Start
+
+Öffne die `index.html` im Browser.
+
+## JSON-Format
+
+```json
+[
+  {
+    "question": "<div>Frage ...</div>",
+    "answer": "<div>Antwort ...</div>",
+    "categories": ["Kategorie"],
+    "keywords": []
+  }
+]
+```
+
+Bilder können als HTML `<img>`-Tags in `question` oder `answer` enthalten sein (z. B. Base64 oder URL).

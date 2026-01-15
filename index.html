@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lernkarten – Repetico-Logik</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lernkarten</h1>
+      <p>Importiere JSON-Kartensätze und lerne mit Repetico-Intervallen.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Kartensätze importieren</h2>
+        <div class="upload-row">
+          <input id="file-input" type="file" accept="application/json" multiple />
+          <button id="clear-storage" type="button">Alle Daten löschen</button>
+        </div>
+        <p class="hint">
+          Erwartetes Format: Liste von Objekten mit <code>question</code>, <code>answer</code>, optional
+          <code>categories</code> und <code>keywords</code>.
+        </p>
+      </section>
+
+      <section class="panel" aria-live="polite">
+        <h2>Deine Kartensätze</h2>
+        <div id="deck-list" class="deck-list"></div>
+      </section>
+
+      <section class="panel" id="study-panel">
+        <h2>Lernmodus</h2>
+        <div class="study-header">
+          <div>
+            <span id="active-deck">Kein Kartensatz ausgewählt</span>
+            <div id="deck-progress" class="progress"></div>
+          </div>
+          <button id="show-answer" type="button" disabled>Antwort anzeigen</button>
+        </div>
+        <div class="card" id="card">
+          <div class="card-face" id="card-question">Bitte Kartensatz auswählen.</div>
+          <div class="card-face hidden" id="card-answer"></div>
+        </div>
+        <div class="actions">
+          <button id="mark-wrong" type="button" disabled>Nicht gewusst</button>
+          <button id="mark-right" type="button" disabled>Gewusst</button>
+        </div>
+        <div class="legend">
+          <h3>Repetico-Intervalle</h3>
+          <ul>
+            <li>Fach 1–3: täglich</li>
+            <li>Fach 4: 1 Woche</li>
+            <li>Fach 5: 2 Wochen</li>
+            <li>Fach 6: 4 Wochen</li>
+          </ul>
+          <p>
+            Boxen 1–3 zählen als <strong>Lernen</strong>, Boxen 4–5 als <strong>Wiederholen</strong>, Box 6 als
+            <strong>Wissen</strong>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Speicherung erfolgt lokal im Browser (LocalStorage).</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
